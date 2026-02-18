@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="proteinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#proteinGrad)"/>
+  <!-- Muscle/arm icon -->
+  <path d="M30 65 Q30 45 45 40 Q55 38 60 45 Q65 50 65 55 Q65 65 55 70 Q45 75 35 70 Q30 68 30 65" 
+        fill="white" opacity="0.9"/>
+  <!-- Protein bar -->
+  <rect x="55" y="30" width="20" height="35" rx="3" fill="white" opacity="0.9"/>
+  <line x1="60" y1="38" x2="70" y2="38" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="45" x2="70" y2="45" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+  <line x1="60" y1="52" x2="70" y2="52" stroke="#059669" stroke-width="2" stroke-linecap="round"/>
+</svg>
