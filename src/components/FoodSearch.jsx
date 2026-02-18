@@ -337,8 +337,8 @@ export default function FoodSearch({ onAdd, onClose }) {
             )}
           </div>
         ) : (
-          // Camera tab content
-          <div className="h-full bg-white">
+          // Camera tab content - with proper flex layout for height propagation
+          <div className="flex flex-col flex-1 min-h-0 bg-white">
             {capturedImage && (recognitionLoading || recognitionResults.length > 0 || recognitionError) ? (
               // Recognition results view
               <FoodRecognition

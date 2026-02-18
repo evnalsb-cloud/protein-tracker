@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Dashboard from './components/Dashboard'
+import InstallPrompt from './components/InstallPrompt'
 import { useFoodLog } from './hooks/useFoodLog'
 import { toISODateString } from './utils/formatters'
 
@@ -15,18 +16,21 @@ function App() {
   }
 
   return (
-    <Dashboard
-      log={log}
-      goal={goal}
-      progress={progress}
-      remaining={remaining}
-      isGoalReached={isGoalReached}
-      onAddFood={addFood}
-      onRemoveFood={removeFood}
-      onSetGoal={setGoal}
-      currentDate={currentDate}
-      onDateChange={handleDateChange}
-    />
+    <>
+      <Dashboard
+        log={log}
+        goal={goal}
+        progress={progress}
+        remaining={remaining}
+        isGoalReached={isGoalReached}
+        onAddFood={addFood}
+        onRemoveFood={removeFood}
+        onSetGoal={setGoal}
+        currentDate={currentDate}
+        onDateChange={handleDateChange}
+      />
+      <InstallPrompt />
+    </>
   )
 }
 

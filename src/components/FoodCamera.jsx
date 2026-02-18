@@ -98,9 +98,9 @@ export default function FoodCamera({ onCapture, onClose }) {
   }
 
   return (
-    <div className="flex flex-col h-full bg-black">
+    <div className="flex flex-col h-full min-h-0 bg-black">
       {/* Camera view */}
-      <div className="relative flex-1">
+      <div className="relative flex-1 min-h-0 overflow-hidden">
         {error ? (
           <div className="flex flex-col items-center justify-center h-full text-white p-4">
             <svg className="w-16 h-16 mb-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -142,8 +142,8 @@ export default function FoodCamera({ onCapture, onClose }) {
         )}
       </div>
       
-      {/* Controls */}
-      <div className="bg-black p-4 flex items-center justify-center gap-8">
+      {/* Controls - Fixed at bottom with safe-area support */}
+      <div className="flex-shrink-0 min-h-[88px] bg-black p-4 pb-[max(env(safe-area-inset-bottom),16px)] flex items-center justify-center gap-8">
         {/* Close button */}
         <button
           onClick={onClose}
