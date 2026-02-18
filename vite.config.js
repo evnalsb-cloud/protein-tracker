@@ -40,6 +40,11 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // Force immediate activation and cache cleanup
+        skipWaiting: true,
+        clientsClaim: true,
+        // Clean up old caches on activation
+        cleanupOutdatedCaches: true,
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/trackapi\.nutritionix\.com\/.*/i,
