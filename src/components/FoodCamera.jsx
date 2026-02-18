@@ -98,7 +98,7 @@ export default function FoodCamera({ onCapture, onClose }) {
   }
 
   return (
-    <div className="flex flex-col h-full min-h-0 bg-black">
+    <div className="fixed inset-0 bg-black flex flex-col">
       {/* Camera view */}
       <div className="relative flex-1 min-h-0 overflow-hidden">
         {error ? (
@@ -132,7 +132,7 @@ export default function FoodCamera({ onCapture, onClose }) {
               </div>
               
               {/* Instructions */}
-              <div className="absolute top-4 left-0 right-0 text-center">
+              <div className="absolute top-4 left-0 right-0 text-center pt-[env(safe-area-inset-top)]">
                 <p className="text-white/80 text-sm bg-black/30 inline-block px-3 py-1 rounded-full">
                   Position food in the frame
                 </p>
@@ -143,7 +143,7 @@ export default function FoodCamera({ onCapture, onClose }) {
       </div>
       
       {/* Controls - Fixed at bottom with safe-area support */}
-      <div className="flex-shrink-0 min-h-[88px] bg-black p-4 pb-[max(env(safe-area-inset-bottom),16px)] flex items-center justify-center gap-8">
+      <div className="flex-shrink-0 min-h-[100px] bg-black p-4 pb-[max(env(safe-area-inset-bottom),20px)] flex items-center justify-center gap-8">
         {/* Close button */}
         <button
           onClick={onClose}
@@ -158,9 +158,9 @@ export default function FoodCamera({ onCapture, onClose }) {
         <button
           onClick={capturePhoto}
           disabled={!stream || error}
-          className="w-16 h-16 rounded-full bg-white hover:bg-gray-100 transition-colors disabled:opacity-30 flex items-center justify-center"
+          className="w-20 h-20 rounded-full bg-white hover:bg-gray-100 transition-colors disabled:opacity-30 flex items-center justify-center"
         >
-          <div className="w-12 h-12 rounded-full border-4 border-gray-800" />
+          <div className="w-14 h-14 rounded-full border-4 border-gray-800" />
         </button>
         
         {/* Switch camera button */}
